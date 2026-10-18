@@ -4,6 +4,8 @@ Team **moov** — Akshay Bagde, Ankit Kr Sinha, Aayush Ranjan, Apoorv Singh.
 **Top 100 of 32,000+ teams.** Macro F0.5: **0.9911** on held-out train entities, **0.9879** on the public leaderboard.
 
 ## Task
+Full official problem statement: [docs/PROBLEM_STATEMENT.md](docs/PROBLEM_STATEMENT.md) ([PDF](docs/PROBLEM_STATEMENT.pdf)).
+
 For every Source 1 business (name, address, country), find all records in Source 2 / Source 3 that refer to the same
 real-world business. A business can have zero matches. Train data covers US and India; test also has **France, with no
 labels**. Data size: 2.2M Source 1 entities and about 10M Source 2/3 records per split. Metric: macro F0.5 per Source 1
@@ -41,7 +43,10 @@ The full write-up (features, error analysis, thresholds) is in [docs/SOLUTION_RE
 src/                 final pipeline (one script per stage, see the table in docs/SOLUTION_REPORT.md)
 run_all.sh           end-to-end run: raw TSVs -> output/matching_results.tsv + output/candidate_pairs.tsv
 requirements.txt     pinned versions (Python 3.11, torch 2.6.0 + CUDA 12.4)
+utils/
+  validate_submission.py  official submission validator
 docs/
+  PROBLEM_STATEMENT.md / .pdf  official problem statement
   SOLUTION_REPORT.md submitted solution documentation
   PLAN.md            data findings and plan made during the challenge
   CHALLENGE_NOTES.md rules, file sizes, submission format
